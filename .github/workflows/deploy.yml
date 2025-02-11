@@ -30,13 +30,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up remote runtinme
+        run: npm install
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-      - name: Set up remote runtinme
-        run: npm install
       - name: Install dependencies
         run: npm ci
       - name: Build
